@@ -9,3 +9,4 @@ First of all, run Carthage command below because Carthage directory is git-ignor
 ```bash
 carthage bootstrap --platform iOS
 ```
+
