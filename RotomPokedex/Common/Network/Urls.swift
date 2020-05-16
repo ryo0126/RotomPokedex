@@ -47,9 +47,12 @@ public enum PokemonGifUrl : UrlString {
     public var urlString: String {
         switch self {
         case .primary(let name):
-            return "http://www.pokestadium.com/sprites/xy/\(name).gif"
-        case .other(let name, let suffix):
-            return "http://www.pokestadium.com/sprites/xy/\(name)-\(String(suffix)).gif"
+            // アクセント記号などは取り除く(例:flabébé -> flabebeなど)
+            let diacriticsRemoved = name.folding(options: .diacriticInsensitive, locale: .current)
+            return "https://projectpokemon.org/images/normal-sprite/\(diacriticsRemoved).gif"
+        case .other(_, _):
+            // 対応するURLがなくなってしまったので空文字
+            return ""
         }
     }
 }
