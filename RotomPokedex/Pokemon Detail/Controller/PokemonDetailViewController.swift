@@ -332,11 +332,11 @@ class PokemonDetailViewController: BaseViewController {
 
     /// 上にスワイプされたとき
     @IBAction func onUpSwiped(_ sender: UISwipeGestureRecognizer) {
-        showPrevious.accept(())
+        showNext.accept(())
     }
 
     /// 下にスワイプされたとき
     @IBAction func onDownSwiped(_ sender: UISwipeGestureRecognizer) {
-        showNext.accept(())
+        showPrevious.accept(())
     }
 }
